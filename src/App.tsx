@@ -35,14 +35,14 @@ function App(): React.JSX.Element {
                         <Col
                             style={{
                                 width: 5,
-                                backgroundColor: "Red",
+                                backgroundColor: "red",
                                 height: 25,
                             }}
                         ></Col>
                         <Col
                             style={{
                                 width: 5,
-                                backgroundColor: "Red",
+                                backgroundColor: "red",
                                 height: 100,
                             }}
                         ></Col>
