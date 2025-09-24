@@ -329,36 +329,24 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    let temp: Question[] = questions.map(
-        (question: Question): Question => ({
-            ...question,
-            id: question.id,
-            name: question.name,
-            body: question.body,
-            type: question.type,
-            options: question.options,
-            expected: question.expected,
-            points: question.points,
-            published: question.published,
-        }),
-    );
-    for (let i = 0; i < questions.length; i++) {
-        if (temp[i].id == targetId) {
-            if (targetOptionIndex == -1) {
-                addOption(temp[i], newOption);
-            } else {
-                let temp1: string[] = questions[i].options;
-                temp[i].options = [];
-                for (let j = 0; j < temp[i].options.length; j++) {
-                    if (j == targetOptionIndex) {
-                        temp[i].options.push(newOption);
-                    }
-                    temp[i].options.push(temp1[j]);
-                }
-            }
+    return questions.map((question: Question): Question => {
+        if (question.id !== targetId) {
+            return question;
         }
-    }
-    return temp;
+        if (targetOptionIndex === -1) {
+            return {
+                ...question,
+                options: [...question.options, newOption],
+            };
+        } else {
+            const newOptions = [...question.options];
+            newOptions[targetOptionIndex] = newOption;
+            return {
+                ...question,
+                options: newOptions,
+            };
+        }
+    });
 }
 
 /***
