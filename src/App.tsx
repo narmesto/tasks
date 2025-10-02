@@ -12,7 +12,6 @@ import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 import img from "./minion.jpg";
 import { Button } from "react-bootstrap";
-import { Container, Row, Col } from "react-bootstrap";
 
 function App(): React.JSX.Element {
     return (
