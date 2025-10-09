@@ -8,7 +8,6 @@ export function ChangeColor(): React.JSX.Element {
     }
     return (
         <div>
-            <h3>Change Color</h3>
             <Form.Check
                 inline
                 type="radio"
@@ -101,7 +100,10 @@ export function ChangeColor(): React.JSX.Element {
             />
             <div>
                 You have chosen{" "}
-                <span style={{ background: color }}>{color}</span>.
+                <span data-testid="colored-box" style={{ background: color }}>
+                    {color}
+                </span>
+                .
             </div>
         </div>
     );

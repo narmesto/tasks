@@ -14,7 +14,6 @@ export function MultipleChoiceQuestion({
     }
     return (
         <div>
-            <h3>Multiple Choice Question</h3>
             <Form.Group controlId="options">
                 <Form.Label>What is your favorite color?</Form.Label>
                 <Form.Select value={answer} onChange={changeAnswer}>

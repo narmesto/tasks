@@ -9,7 +9,6 @@ export function EditMode(): React.JSX.Element {
         setEdit(event.target.checked);
     }
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
-        setEdit(true);
         setName(event.target.value);
     }
     function updateStudent(event: React.ChangeEvent<HTMLInputElement>) {
@@ -17,29 +16,30 @@ export function EditMode(): React.JSX.Element {
     }
     return (
         <div>
-            <h3>Edit Mode</h3>
             <div>
                 <Form.Check
                     inline
                     type="switch"
-                    id="edit-check"
+                    id="edit-mode"
                     label="edit"
                     checked={edit}
                     onChange={updateEdit}
                 />
             </div>
             <div>
-                <Form.Check
-                    inline
-                    type="checkbox"
-                    id="is-student-check"
-                    label="student"
-                    checked={student}
-                    onChange={updateStudent}
-                />
+                {edit && (
+                    <Form.Check
+                        inline
+                        type="checkbox"
+                        id="is-student-check"
+                        label="student"
+                        checked={student}
+                        onChange={updateStudent}
+                    />
+                )}
             </div>
             <div>
-                <Form.Control value={name} onChange={updateName} />
+                {edit && <Form.Control value={name} onChange={updateName} />}
             </div>
             <div>
                 {!edit && (

@@ -12,7 +12,6 @@ export function CheckAnswer({
     }
     return (
         <div>
-            <h3>Check Answer</h3>
             <Form.Group controlId="answerBox">
                 <Form.Control
                     as="textarea"

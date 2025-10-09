@@ -18,7 +18,6 @@ export function GiveAttempts(): React.JSX.Element {
     }
     return (
         <div>
-            <h3>Give Attempts</h3>
             <div>Attempts left: {left}</div>
             <div>
                 <Button onClick={changeLeft}>gain</Button>
